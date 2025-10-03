@@ -1,6 +1,72 @@
 {
-  "pluginAlias": "EufySecurityE340",
+  "pluginAlias": "EufySecurity",
   "pluginType": "platform",
   "singular": true,
-  "customUi": true
+  "customUi": true,
+  "headerDisplay": "This plugin provides Homebridge support for Eufy Security devices, including the E340 doorbell with improved Node.js 24.9.0+ compatibility.",
+  "footerDisplay": "For help please visit the [project repository](https://github.com/calebsargeant/homebridge-eufy-security).",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "required": true,
+        "default": "EufySecurity",
+        "description": "Plugin name as it will appear in Homebridge logs."
+      },
+      "username": {
+        "title": "Username",
+        "type": "string",
+        "required": true,
+        "description": "Your Eufy Security account username (email)."
+      },
+      "password": {
+        "title": "Password",
+        "type": "string",
+        "required": true,
+        "description": "Your Eufy Security account password."
+      },
+      "country": {
+        "title": "Country",
+        "type": "string",
+        "required": true,
+        "default": "US",
+        "description": "Your country code (e.g., US, GB, DE)."
+      },
+      "deviceName": {
+        "title": "Device Name",
+        "type": "string",
+        "default": "MyPhone",
+        "description": "Trusted device name for authentication."
+      },
+      "enableDetailedLogging": {
+        "title": "Enable Detailed Logging",
+        "type": "boolean",
+        "default": false,
+        "description": "Enable detailed debug logging."
+      },
+      "enableEmbeddedPKCS1Support": {
+        "title": "Enable Embedded PKCS1 Support",
+        "type": "boolean",
+        "default": false,
+        "description": "Enable software-based PKCS1 support for Node.js versions that don't have native support. Node.js 24.9.0+ with OpenSSL 3.5.2+ has restored native support and doesn't need this."
+      },
+      "pollingIntervalMinutes": {
+        "title": "Polling Interval (minutes)",
+        "type": "integer",
+        "default": 10,
+        "minimum": 1,
+        "description": "How often to poll for device status updates."
+      },
+      "CameraMaxLivestreamDuration": {
+        "title": "Camera Max Livestream Duration (seconds)",
+        "type": "integer",
+        "default": 30,
+        "minimum": 1,
+        "maximum": 86400,
+        "description": "Maximum duration for camera livestreams in seconds."
+      }
+    }
+  }
 }

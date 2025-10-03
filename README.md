@@ -1,23 +1,18 @@
 <p align="center">
-   <a href="https://github.com/homebridge-eufy-security/plugin"><img src="https://raw.githubusercontent.com/wiki/homebridge-eufy-security/plugin/img/homebridge-eufy-security.png" width="456px"></a>
+   <a href="https://github.com/calebsargeant/homebridge-eufy-security"><img src="https://raw.githubusercontent.com/wiki/homebridge-eufy-security/plugin/img/homebridge-eufy-security.png" width="456px"></a>
 </p>
 <span align="center">
 
-# homebridge-eufy-security
+# homebridge-eufy-security-e340
 
-⚠️ WARNING:
-> This is a fork of homebridge-eufy-security with fixes for the E340 doorbell (Node 24.x compatibility, PKCS1 padding). Use at your own risk.
+✅ **ENHANCED FORK**: Node.js 24.9.0+ support with E340 doorbell fixes
+> This fork resolves the "No Response - This camera is not responding" issue in Apple Home for Eufy E340 doorbells running on modern Node.js versions.
 
-Homebridge plugin to control certain Eufy Security devices
+Homebridge plugin to control Eufy Security devices with enhanced compatibility
 
-[![npm](https://img.shields.io/npm/v/homebridge-eufy-security?color=green)](https://www.npmjs.com/package/homebridge-eufy-security)
-[![verified-by-homebridge](https://badgen.net/badge/homebridge/verified/purple)](https://github.com/homebridge/homebridge/wiki/Verified-Plugins)
-[![npm](https://img.shields.io/npm/dt/homebridge-eufy-security)](https://www.npmjs.com/package/homebridge-eufy-security)
+[![npm](https://img.shields.io/npm/v/homebridge-eufy-security-e340?color=green)](https://www.npmjs.com/package/homebridge-eufy-security-e340)
+[![npm](https://img.shields.io/npm/dt/homebridge-eufy-security-e340)](https://www.npmjs.com/package/homebridge-eufy-security-e340)
 
-[![npm](https://img.shields.io/npm/v/homebridge-eufy-security/rc?label=rc)](https://github.com/homebridge-eufy-security/plugin/wiki/Special-Version-(BETA---RC---HKSV))
-[![npm](https://img.shields.io/npm/v/homebridge-eufy-security/beta?label=beta)](https://github.com/homebridge-eufy-security/plugin/wiki/Special-Version-(BETA---RC---HKSV))
-[![npm](https://img.shields.io/npm/v/homebridge-eufy-security/hksv?label=hksv)](https://github.com/homebridge-eufy-security/plugin/wiki/Special-Version-(BETA---RC---HKSV))
-[![Discord](https://img.shields.io/discord/432663330281226270?color=728ED5&logo=discord&label=hb-discord)](https://discord.com/channels/432663330281226270/876907345962229791)
 
 </span>
 
@@ -32,8 +27,21 @@ Homebridge plugin to control certain Eufy Security devices
 - To use this plugin, you will need to already have [Homebridge](https://homebridge.io) (at least v1.6.1)  installed. Refer to the links for more information and installation instructions.
 - For configuration Homebridge UI is recommenend. If you have 2FA enabled it is mandatory.
 
-### ⚠️ Warning
-Starting from Node.js versions `18.19.1`, `20.11.1`, and `21.6.2`, the removal of `RSA_PKCS1_PADDING` support breaks Eufy Security's livestream/P2P functionality. We advise against using Node.js versions beyond **v20.11.0** until compatibility with the plugin has been confirmed. If you encounter any issues, consider reverting to the recommended LTS version within the **v20** branch. See [here](https://github.com/homebridge-eufy-security/plugin/wiki/Node.js-Compatibility-with-Eufy-Security-Plugin) for more information.
+### ✨ Node.js 24.9.0+ Support
+**FIXED!** This fork automatically detects and utilizes the restored native PKCS1 support in Node.js 24.9.0+ with OpenSSL 3.5.2+. 
+
+- ✅ **Node.js 24.9.0+**: Native PKCS1 support automatically detected and used
+- ✅ **Older affected versions**: Embedded PKCS1 support available as fallback
+- ✅ **Smart configuration**: Plugin recommends optimal settings based on your environment
+- ✅ **E340 doorbell**: "No Response" errors fixed
+
+### Installation
+
+```bash
+npm install homebridge-eufy-security-e340
+```
+
+Or search for "homebridge-eufy-security-e340" in the Homebridge UI plugins section.
 
 #### Setup
 * [Installation](https://github.com/homebridge-eufy-security/plugin/wiki/Installation-and-Configuration#installation)

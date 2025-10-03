@@ -1,34 +1,42 @@
 {
   "displayName": "Homebridge Eufy Security E340",
   "name": "homebridge-eufy-security-e340",
-  "version": "4.3.8",
-  "description": "Control Eufy Security from homebridge.",
+  "version": "4.3.9",
+  "description": "Enhanced Homebridge plugin for Eufy Security devices with Node.js 24.9.0+ support and E340 doorbell compatibility fixes.",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/homebridge-eufy-security/plugin.git"
+    "url": "git+https://github.com/calebsargeant/homebridge-eufy-security.git"
   },
   "funding": [
     {
       "type": "github",
-      "url": "https://github.com/sponsors/homebridge-eufy-security"
+      "url": "https://github.com/sponsors/calebsargeant"
     }
   ],
   "bugs": {
-    "url": "https://github.com/homebridge-eufy-security/plugin/issues"
+    "url": "https://github.com/calebsargeant/homebridge-eufy-security/issues"
   },
   "engines": {
     "node": "20.11.0 || ^22 || ^24",
     "homebridge": "^1.9.0 || ^2.0.0 || ^2.0.0-beta.27 || ^2.0.0-alpha.37"
   },
   "main": "dist/index.js",
+  "files": [
+    "dist/**/*",
+    "homebridge-ui/**/*",
+    "config.schema.json",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
   "scripts": {
     "lint": "eslint src/** --max-warnings=0",
     "lint-fix": "eslint src/** --max-warnings=0 --fix",
     "watch": "npm run build && npm link && nodemon",
     "build": "npm run build-plugin && npm run postbuild && npm run build-configui",
     "build-plugin": "rimraf ./dist && tsc --project tsconfig.plugin.json",
-    "build-configui": "rimraf ./homebridge-ui && ng build --base-href /api/plugins/settings-ui/homebridge-eufy-security/ && tsc --project tsconfig.configui.server.json",
+    "build-configui": "rimraf ./homebridge-ui && ng build --base-href /api/plugins/settings-ui/homebridge-eufy-security-e340/ && tsc --project tsconfig.configui.server.json",
     "postbuild": "cp -r ./media ./dist/media",
     "prebuild": "node -p \"'export const LIB_VERSION = ' + JSON.stringify(require('./package.json').version) + ';'\" > src/plugin/version.ts && node -p \"'export const LIB_VERSION = ' + JSON.stringify(require('./package.json').version) + ';'\" > src/version.ts",
     "serve-configui": "ng serve",
@@ -36,12 +44,19 @@
   },
   "keywords": [
     "homebridge-plugin",
-    "Eufy",
-    "Eufy Security",
+    "homebridge",
+    "eufy",
+    "eufy-security",
     "doorbell",
-    "eufy doorbell",
+    "eufy-doorbell",
+    "e340",
+    "eufy-e340",
     "security-system",
-    "camera"
+    "camera",
+    "smart-home",
+    "homekit",
+    "nodejs-24",
+    "pkcs1"
   ],
   "dependencies": {
     "@homebridge/plugin-ui-utils": "^2.0.2",
@@ -95,6 +110,9 @@
     "typescript": "^5.8.3",
     "zone.js": "~0.15.0"
   },
+  "peerDependencies": {
+    "homebridge": "^1.9.0 || ^2.0.0"
+  },
   "overrides": {
     "autoprefixer": "^10.4.5"
   },
@@ -103,6 +121,6 @@
       "ban-ts-comment": 0
     }
   },
-  "homepage": "https://github.com/homebridge-eufy-security/plugin/wiki",
-  "author": "homebridge-eufy-security"
+  "homepage": "https://github.com/calebsargeant/homebridge-eufy-security#readme",
+  "author": "calebsargeant"
 }
