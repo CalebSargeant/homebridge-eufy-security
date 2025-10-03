@@ -10,8 +10,11 @@
 
 Homebridge plugin to control Eufy Security devices with enhanced compatibility
 
-[![npm](https://img.shields.io/npm/v/homebridge-eufy-security-e340?color=green)](https://www.npmjs.com/package/homebridge-eufy-security-e340)
-[![npm](https://img.shields.io/npm/dt/homebridge-eufy-security-e340)](https://www.npmjs.com/package/homebridge-eufy-security-e340)
+[![npm](https://img.shields.io/npm/v/homebridge-eufy-security-e340?color=green&label=npm)](https://www.npmjs.com/package/homebridge-eufy-security-e340)
+[![npm downloads](https://img.shields.io/npm/dt/homebridge-eufy-security-e340?label=downloads)](https://www.npmjs.com/package/homebridge-eufy-security-e340)
+[![Node.js Version](https://img.shields.io/node/v/homebridge-eufy-security-e340?label=node)](https://nodejs.org/)
+[![Homebridge](https://img.shields.io/badge/homebridge-v1.9.0+-blue?logo=homebridge)](https://homebridge.io/)
+[![E340 Compatible](https://img.shields.io/badge/E340-compatible-brightgreen)](https://github.com/calebsargeant/homebridge-eufy-security)
 
 
 </span>

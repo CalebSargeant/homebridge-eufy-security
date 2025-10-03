@@ -1,7 +1,7 @@
 {
   "displayName": "Homebridge Eufy Security E340",
   "name": "homebridge-eufy-security-e340",
-  "version": "4.3.9",
+  "version": "4.3.11",
   "description": "Enhanced Homebridge plugin for Eufy Security devices with Node.js 24.9.0+ support and E340 doorbell compatibility fixes.",
   "license": "Apache-2.0",
   "repository": {
@@ -111,7 +111,12 @@
     "zone.js": "~0.15.0"
   },
   "peerDependencies": {
-    "homebridge": "^1.9.0 || ^2.0.0"
+    "homebridge": "^1.9.0 || >=2.0.0-beta.27"
+  },
+  "peerDependenciesMeta": {
+    "homebridge": {
+      "optional": false
+    }
   },
   "overrides": {
     "autoprefixer": "^10.4.5"
@@ -122,5 +127,18 @@
     }
   },
   "homepage": "https://github.com/calebsargeant/homebridge-eufy-security#readme",
-  "author": "calebsargeant"
+  "author": "calebsargeant",
+  "contributors": [
+    "calebsargeant"
+  ],
+  "preferGlobal": true,
+  "os": [
+    "linux",
+    "darwin",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ]
 }
